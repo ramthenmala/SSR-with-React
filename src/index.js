@@ -4,9 +4,8 @@ import helper from './helper/helper';
 const app = express();
 
 app.use(express.static('public'))
-app.get('/', (req, res) => {
-   
-    res.send(helper());
+app.get('*', (req, res) => {
+    res.send(helper(req));
 })
 
 app.listen(3333, () => {
