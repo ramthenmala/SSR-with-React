@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
     return (
-        <h1>Simple H1</h1>
+        <h1>Sample change nodemon</h1>
     )
 }
 
