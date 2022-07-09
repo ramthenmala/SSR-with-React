@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = {
   // Inform webpack we are building a bundle for
   // nodejs, not for browser
-  target: 'nodejs',
+  target: 'node',
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
@@ -13,7 +13,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.js?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
