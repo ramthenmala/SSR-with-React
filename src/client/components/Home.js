@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
     return (
-        <h1>Sample change nodemon</h1>
+        <h1>Implemented es6</h1>
     )
 }
 
