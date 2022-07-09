@@ -22410,7 +22410,7 @@ var Home = function Home() {
     _react2.default.createElement(
       'h1',
       null,
-      'Implemented es6'
+      'Implemented es6 run parallel'
     ),
     _react2.default.createElement(
       'button',
