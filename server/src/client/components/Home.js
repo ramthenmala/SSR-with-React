@@ -2,8 +2,11 @@ import React from 'react';
 
 const Home = () => {
   return (
-    <div>Server ES6 Version</div>
-  )
+    <div>
+      <div>Server ES6 Version</div>
+      <button onClick={() => console.log('Click Me')}>Press Me</button>
+    </div>
+  );
 }
 
 export default Home
