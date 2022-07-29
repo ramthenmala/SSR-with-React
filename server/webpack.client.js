@@ -1,6 +1,8 @@
-const path = require('path')
+const path = require('path');
+const WebpackMerge = require('webpack-merge');
+const CommonConfig = require('./webpack.base.js');
 
-module.exports = {
+const clientConfig = {
     entry: './src/client/client.js',
     output: {
         filename: 'bundle.js',
@@ -23,3 +25,5 @@ module.exports = {
         ]
     }
 }
+
+module.exports = WebpackMerge(CommonConfig, clientConfig);
