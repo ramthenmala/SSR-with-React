@@ -1634,9 +1634,9 @@ module.exports = require("stream");
 
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(118);
-} else {
   module.exports = __webpack_require__(119);
+} else {
+  module.exports = __webpack_require__(120);
 }
 
 
@@ -7358,7 +7358,7 @@ module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
 
 
 
-var hyphenate = __webpack_require__(122);
+var hyphenate = __webpack_require__(123);
 
 var msPattern = /^ms-/;
 
@@ -7425,9 +7425,9 @@ module.exports = memoizeStringOnly;
 
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(125);
-} else {
   module.exports = __webpack_require__(126);
+} else {
+  module.exports = __webpack_require__(127);
 }
 
 
@@ -7442,25 +7442,17 @@ var _express = __webpack_require__(55);
 
 var _express2 = _interopRequireDefault(_express);
 
-var _react = __webpack_require__(17);
+var _renderer = __webpack_require__(118);
 
-var _react2 = _interopRequireDefault(_react);
-
-var _server = __webpack_require__(120);
-
-var _Home = __webpack_require__(131);
-
-var _Home2 = _interopRequireDefault(_Home);
+var _renderer2 = _interopRequireDefault(_renderer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var app = (0, _express2.default)();
-
 app.use(_express2.default.static('public'));
+
 app.get('/', function (req, res) {
-  var content = (0, _server.renderToString)(_react2.default.createElement(_Home2.default, null));
-  var html = '\n    <html>\n      <head>\n        <title>SSR</title>\n      </head>\n      <body>\n        <div id="root">' + content + '</div>\n        <script src="bundle.js"></script>\n      </body>\n    </html>\n  ';
-  res.send(html);
+  res.send((0, _renderer2.default)());
 });
 
 app.listen(3000, function () {
@@ -17698,6 +17690,34 @@ function createRedirectDirectoryListener () {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(17);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _server = __webpack_require__(121);
+
+var _Home = __webpack_require__(132);
+
+var _Home2 = _interopRequireDefault(_Home);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function () {
+    var content = (0, _server.renderToString)(_react2.default.createElement(_Home2.default, null));
+    return '\n        <html>\n        <head>\n            <title>SSR</title>\n        </head>\n        <body>\n            <div id="root">' + content + '</div>\n            <script src="bundle.js"></script>\n        </body>\n        </html>\n    ';
+};
+
+/***/ }),
+/* 119 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /*
  React v16.0.0
  react.production.min.js
@@ -17724,7 +17744,7 @@ module.exports={Children:{map:S.map,forEach:S.forEach,count:S.count,toArray:S.to
 
 
 /***/ }),
-/* 119 */
+/* 120 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19429,21 +19449,21 @@ module.exports = ReactEntry;
 
 
 /***/ }),
-/* 120 */
+/* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(121);
+  module.exports = __webpack_require__(122);
 } else {
-  module.exports = __webpack_require__(123);
+  module.exports = __webpack_require__(124);
 }
 
 
 /***/ }),
-/* 121 */
+/* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19495,7 +19515,7 @@ ya);Z.Properties[b]=0;Z.DOMAttributeNames[b]=a});E.injection.injectDOMPropertyCo
 
 
 /***/ }),
-/* 122 */
+/* 123 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19531,7 +19551,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 123 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19556,12 +19576,12 @@ var invariant = __webpack_require__(19);
 var require$$0 = __webpack_require__(49);
 var react = __webpack_require__(17);
 var emptyFunction = __webpack_require__(20);
-var propTypes = __webpack_require__(124);
+var propTypes = __webpack_require__(125);
 var emptyObject = __webpack_require__(18);
 var hyphenateStyleName = __webpack_require__(51);
 var memoizeStringOnly = __webpack_require__(52);
 var checkPropTypes = __webpack_require__(26);
-var camelizeStyleName = __webpack_require__(129);
+var camelizeStyleName = __webpack_require__(130);
 var stream = __webpack_require__(16);
 
 /**
@@ -22790,7 +22810,7 @@ module.exports = ReactDOMServerNodeEntry;
 
 
 /***/ }),
-/* 124 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -22806,16 +22826,16 @@ if (process.env.NODE_ENV !== 'production') {
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(127)(ReactIs.isElement, throwOnDirectAccess);
+  module.exports = __webpack_require__(128)(ReactIs.isElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(128)();
+  module.exports = __webpack_require__(129)();
 }
 
 
 /***/ }),
-/* 125 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -22837,7 +22857,7 @@ exports.isValidElementType=function(a){return"string"===typeof a||"function"===t
 
 
 /***/ }),
-/* 126 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23025,7 +23045,7 @@ exports.typeOf = typeOf;
 
 
 /***/ }),
-/* 127 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23642,7 +23662,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 
 
 /***/ }),
-/* 128 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23714,7 +23734,7 @@ module.exports = function() {
 
 
 /***/ }),
-/* 129 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23729,7 +23749,7 @@ module.exports = function() {
 
 
 
-var camelize = __webpack_require__(130);
+var camelize = __webpack_require__(131);
 
 var msPattern = /^-ms-/;
 
@@ -23757,7 +23777,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 130 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -23792,7 +23812,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 131 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

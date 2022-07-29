@@ -11,4 +11,4 @@ const serverConfig = {
     },
 }
 
-module.exports = WebpackMerge(CommonConfig, serverConfig)
+module.exports = WebpackMerge(serverConfig, CommonConfig);
